@@ -1,0 +1,13 @@
+run = "npm run dev"
+entrypoint = "README.md"
+
+[nix]
+channel = "stable-24_05"
+
+[env]
+PORT = "3001"
+FRONTEND_PORT = "5173"
+NODE_ENV = "development"
+
+[deployment]
+run = ["sh", "-c", "npm install && npm run build && npm run start"]

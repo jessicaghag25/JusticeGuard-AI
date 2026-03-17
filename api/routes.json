@@ -1,0 +1,20 @@
+{
+  "service": "96ply",
+  "routes": [
+    { "method": "POST", "path": "/api/signup", "description": "Create account with bcrypt password hashing and JWT issuance" },
+    { "method": "POST", "path": "/api/login", "description": "Authenticate user and issue JWT" },
+    { "method": "POST", "path": "/api/logout", "description": "Clear auth cookie and end current session" },
+    { "method": "POST", "path": "/api/upload", "description": "Upload a document, generate SHA-256 hash, and return fileId + metadata" },
+    { "method": "POST", "path": "/api/verify", "description": "Verify and timestamp uploaded document by fileId; supports optional third-party placeholder" },
+    { "method": "POST", "path": "/api/documents/:docId/restore/:versionId", "description": "Restore previous document version and append immutable audit event" },
+    { "method": "GET", "path": "/api/documents", "description": "List documents including hash, verification status, and audit trail" },
+    { "method": "GET", "path": "/api/timeline/:userId", "description": "Return user timeline actions sorted by date with version history, verification, and expiration signals" },
+    { "method": "POST", "path": "/api/ai-guidance", "description": "Generate AI or local-rule guidance for compliance gaps and log interaction" },
+    { "method": "GET", "path": "/api/ai-guidance/history/:userId", "description": "Return AI guidance interaction history for audit review" },
+    { "method": "GET", "path": "/api/notifications/:userId", "description": "Return active push/email/SMS placeholder alerts for expiring or missing documents" },
+    { "method": "POST", "path": "/api/notifications/:userId/:notificationId", "description": "Update notification state with snooze, dismiss, or act actions" },
+    { "method": "GET", "path": "/api/reports/templates", "description": "List pre-built report templates (US I-9, Canadian work permits, cross-border)" },
+    { "method": "POST", "path": "/api/reports/export", "description": "Compile metadata, timestamps, and verification logs into PDF/CSV/Excel exports" },
+    { "method": "POST", "path": "/api/reports/share", "description": "Create report share link with optional password protection" }
+  ]
+}
