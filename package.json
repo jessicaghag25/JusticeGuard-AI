@@ -1,0 +1,19 @@
+{
+  "name": "96ply-monorepo",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Replit-ready full-stack scaffold for 96ply",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "install:all": "npm install --workspaces",
+    "dev": "concurrently \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+    "build": "npm run build -w frontend",
+    "start": "npm run start -w backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}

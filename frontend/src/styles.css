@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Accessibility-focused defaults for keyboard users. */
+:focus-visible {
+  outline: 3px solid #1f4f97;
+  outline-offset: 2px;
+}
+
+.high-contrast {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+.high-contrast .bg-white,
+.high-contrast .bg-slate-50,
+.high-contrast .bg-slate-100 {
+  background: #111 !important;
+  color: #fff !important;
+}
+
+.high-contrast .text-slate-600,
+.high-contrast .text-slate-700,
+.high-contrast .text-slate-800,
+.high-contrast .text-slate-900 {
+  color: #fff !important;
+}
